@@ -1,0 +1,59 @@
+body,ul,li,p{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	display: block;
+}
+
+.clear{
+	*zoom: 1;
+}
+
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.out{
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.in{
+	/*width: 400%;*/
+	position: absolute;
+}
+
+.in li{
+	list-style: none;
+	float: left;
+}
+
+.carousel_btn{
+	position: absolute;
+	width: 30px;
+	height: 50px;
+	background-color: #09F;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	top: 40%;	
+	z-index: 999;
+	cursor: pointer;
+}
+
+.carousel_btn.left{
+	left: 6px;
+}
+
+.carousel_btn.right{
+	right: 6px;
+}
+
+
+

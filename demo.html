@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/jquery-carousel.css">
+</head>
+<body>
+	<div id="test"></div>
+	<div class="out" id="carousel">
+		<ul class="in clear" style="left: 0px">
+			<li><img src="img/banner1.jpg" alt=""></li>
+			<li><img src="img/banner2.jpg" alt=""></li>
+			<li><img src="img/banner3.jpg" alt=""></li>
+			<li><img src="img/banner1.jpg" alt=""></li>
+		</ul>
+		<!-- <p class="indicator">
+		</p> -->
+		<div class="carousel_btn left"><b>&lt;</b></div>
+		<div class="carousel_btn right"><b>&gt;</b></div>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/jquery-carousel.js"></script>
+	<script>
+		$(function(){
+			var ajaxRes = [
+				{src: "img/banner1.jpg"},
+				{src: "img/banner2.jpg"},
+				{src: "img/banner3.jpg"},
+				{src: "img/banner4.jpg"},
+				{src: "img/banner5.jpg"},
+				{src: "img/banner6.jpg"},
+				{src: "img/banner7.jpg"},
+				{src: "img/banner8.jpg"},
+				{src: "img/banner9.jpg"},
+				{src: "img/banner10.jpg"}
+			];
+			var html = "";
+			// 遍历图片
+			for(var i=0;i<ajaxRes.length;i++){
+				html += "<li><img src="+ajaxRes[i].src+"></li>";
+			}
+			// 拼接第一张图
+			html += "<li><img src="+ajaxRes[0].src+"></li>";
+			// 设置轮播图宽度
+			// console.log($("#carousel").width());
+			var width = (ajaxRes.length+1)*parseInt($("#carousel").width());
+			// console.log(width);
+			$(".in").width(width).html(html);
+
+			$(".in img").width($("#carousel").width());
+			// console.log($(".in img").width());
+			$(".out").height($(".in").height());
+
+
+
+			$("#carousel").carousel({
+				render:$("#carousel .in"),
+				left_btn: $(".carousel_btn.left"),
+				right_btn: $(".carousel_btn.right"),
+				interval: 4000
+			});
+		})
+	</script>
+</body>
+</html>

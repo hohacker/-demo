@@ -1,0 +1,23 @@
+.jquery-carousel-indicators-outer{
+	position: relative;
+	top: 85%;
+	text-align: center;
+}
+
+.jquery-carousel-indicators{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+.jquery-carousel-indicators:hover{
+	background-color: #09F;
+}
+
+.jquery-carousel-indicators.active{
+	background-color: #09F;
+}
